@@ -1,0 +1,29 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-typescript"],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": false, // Set to 3 if you need to polyfill ES6+ features
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": true // Set to false if targeting CommonJS environments
+      }
+    ],
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "runtime": "automatic",
+        "importSource": "preact"
+      }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "pure": true, // Helps with dead code elimination
+        "minify": true, // Minifies the styled component styles
+        "displayName": false
+      }
+    ]
+  ]
+}

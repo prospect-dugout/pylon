@@ -1,0 +1,32 @@
+import { FunctionalComponent, JSX } from 'preact';
+import { CustomCSSProperties } from '../../lib/custom-css-properties-rule';
+export declare const ICONS: {
+    readonly "alert-outline": JSX.Element;
+    readonly "arrow-back": JSX.Element;
+    readonly "arrow-down": JSX.Element;
+    readonly "arrow-forward": JSX.Element;
+    readonly "arrow-up": JSX.Element;
+    readonly "check-circle-outline": JSX.Element;
+    readonly "chevron-down": JSX.Element;
+    readonly "chevron-forward": JSX.Element;
+    readonly close: JSX.Element;
+    readonly "ellipsis-horizontal": JSX.Element;
+    readonly "help-circle-outline": JSX.Element;
+    readonly "info-circle-outline": JSX.Element;
+    readonly menu: JSX.Element;
+    readonly play: JSX.Element;
+    readonly plus: JSX.Element;
+    readonly search: JSX.Element;
+    readonly share: JSX.Element;
+    readonly trash: JSX.Element;
+    readonly "volume-mute": JSX.Element;
+    readonly volume: JSX.Element;
+};
+export type IconName = keyof typeof ICONS;
+type IconCustomProps = CustomCSSProperties<{
+    icon: IconName;
+    size?: number | string;
+}>;
+export type IconProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, keyof IconCustomProps> & IconCustomProps;
+export declare const Icon: FunctionalComponent<IconProps>;
+export {};

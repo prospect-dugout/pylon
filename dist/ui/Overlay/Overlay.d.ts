@@ -1,0 +1,32 @@
+import { ComponentChildren, FunctionalComponent, JSX } from 'preact';
+import { css } from 'styled-components';
+import { OverlayAnimation } from './animations';
+export type OverlayPosition = {
+    horizontalAlign?: 'left' | 'center' | 'right';
+    horizontalOffset?: number;
+    mode?: 'absolute' | 'fixed' | 'centered';
+    noHorizontalOverlap?: boolean;
+    noVerticalOverlap?: boolean;
+    positionEvent?: MouseEvent | null;
+    positionTarget?: HTMLElement | null;
+    verticalAlign?: 'top' | 'middle' | 'bottom';
+    verticalOffset?: number;
+};
+export type OverlayCustomProps = {
+    animation?: OverlayAnimation;
+    backdropColor?: string;
+    cancelOnEscKey?: boolean;
+    cancelOnOutsideClick?: boolean;
+    children: ComponentChildren;
+    closeOthers?: boolean | string;
+    disableBodyScroll?: boolean;
+    noAutoFocus?: boolean;
+    opened: boolean;
+    position?: OverlayPosition;
+    pushHistoryState?: boolean;
+    rootCss?: ReturnType<typeof css>;
+    setOpened?: (opened: boolean) => void;
+    withBackdrop?: boolean;
+};
+export type OverlayProps = Omit<JSX.HTMLAttributes<HTMLDivElement>, keyof OverlayCustomProps | 'default'> & OverlayCustomProps;
+export declare const Overlay: FunctionalComponent<OverlayProps>;

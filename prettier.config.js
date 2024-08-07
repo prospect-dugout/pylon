@@ -1,0 +1,23 @@
+module.exports = {
+  plugins: ['@trivago/prettier-plugin-sort-imports'],
+  arrowParens: 'always',
+  bracketSpacing: false,
+  semi: true,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'all',
+  importOrderSeparation: false,
+  importOrderSortSpecifiers: true,
+  importOrderGroupNamespaceSpecifiers: true,
+  importOrder: [
+    '^preact/debug$',
+    'preact',
+    '<THIRD_PARTY_MODULES>',
+    'pylon',
+    'types',
+    '.storybook',
+    '^[/]',
+    '^[../]',
+    '^[./]',
+  ],
+};
